@@ -129,7 +129,7 @@ header {
 .top__inner .top-form__title {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #303030;
+  color: #ffe7e7;
   line-height: 22px;
   letter-spacing: 1.5px;
   margin-bottom: 2rem;
@@ -144,7 +144,7 @@ header {
   outline: none;
   font-size: 0.875rem;
   font-weight: 400;
-  color: #000;
+  color: #303030;
   width: 12.5rem;
 }
 .top__inner .top-form input::-webkit-input-placeholder {
@@ -187,6 +187,10 @@ header {
   top: 1.5rem;
 }
 
+.advantages {
+  margin-bottom: 4.625rem;
+}
+
 .advantages__inner {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -226,4 +230,96 @@ header {
 .advantages__item-text {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.list__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #303030;
+  line-height: 50px;
+  max-width: 29.375rem;
+  margin-bottom: 1.875rem;
+}
+.list__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.list__inner .tabs {
+  padding-right: 1.25rem;
+  width: 100%;
+}
+.list__inner .tabs .tab {
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 20px;
+  color: #303030;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid #e6efde;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.list__inner .tabs .tab span {
+  color: #a4c58c;
+}
+.list__inner .tabs__content {
+  min-width: 31.25rem;
+  height: 43.125rem;
+  background: #c8dcba url(../img/man.jpg) no-repeat center center/cover;
+  position: relative;
+}
+.list__inner .tabs__content .tab-item {
+  display: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+  width: 2.6875rem;
+  height: 2.6875rem;
+  border: 9px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  position: absolute;
+  text-align: center;
+  line-height: 25px;
+}
+.list__inner .tabs__content .tab-item:first-child {
+  display: block;
+}
+.list__inner .tabs__content .item-1 {
+  left: 10rem;
+  top: 11.375rem;
+}
+.list__inner .tabs__content .item-2 {
+  left: 18.75rem;
+  top: 12.5rem;
+}
+.list__inner .tabs__content .item-3 {
+  left: 14.35rem;
+  top: 4.5rem;
+}
+.list__inner .tabs__content .item-4 {
+  left: 14.35rem;
+  top: 8rem;
+}
+.list__inner .tabs__content .item-5 {
+  left: 14.35rem;
+  top: 2rem;
+}
+.list__inner .tabs__content .item-6 {
+  left: 12.35rem;
+  top: 22rem;
+}
+.list__inner .tabs__content .item-7 {
+  left: 14.35rem;
+  top: 9rem;
+}
+.list__inner .tabs__content .item-8 {
+  left: 14.35rem;
+  top: 12rem;
+}
+.list__inner .tabs__content .item-9 {
+  left: 14.35rem;
+  top: 7rem;
 }

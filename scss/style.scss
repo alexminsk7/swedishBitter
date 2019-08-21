@@ -1,6 +1,7 @@
 $primary-color: #fff;
 $gray-color: #9a9a9a;
 $green-pale: #c8dcba;
+$black-color: #303030;
 $main-font: consolas, sans-serif;
 $montserat: 'Montserrat', sans-serif;
 *,
@@ -39,7 +40,7 @@ header {
 	font-weight: 500;
 	font-size: 1.25rem;
 	a {
-		color: #303030; 
+		color: $black-color;
 		text-decoration: none;
 		text-align: right;
 		position: relative;
@@ -114,7 +115,7 @@ header {
 			&__title {
 				font-size: 0.875rem;
 				font-weight: 700;
-				color: #303030;
+				color: #ffe7e7;
 				line-height: 22px;
 				letter-spacing: 1.5px;
 				margin-bottom: 2rem;
@@ -129,7 +130,7 @@ header {
 				outline: none;
 				font-size: 0.875rem;
 				font-weight: 400;
-				color: #000;
+				color: $black-color;
 				width: 12.5rem;
 				&::placeholder {
 					color: $green-pale;
@@ -165,6 +166,9 @@ header {
 		}
 	}
 }
+.advantages {
+	margin-bottom: 4.625rem;
+}
 .advantages__inner {
 	display: flex;
 	justify-content: space-around;
@@ -199,5 +203,94 @@ header {
 	&-text {
 		font-size: 1rem;
 		line-height: 1.5rem;
+	}
+}
+.list {
+	&__title {
+		font-size: 2.5rem;
+		font-weight: 700;
+		color: $black-color;
+		line-height: 50px;
+		max-width: 29.375rem;
+		margin-bottom: 1.875rem;
+	}
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		& .tabs {
+			padding-right: 1.25rem;
+			width: 100%;
+			& .tab {
+				font-weight: 600;
+				font-size: 0.875rem;
+				line-height: 20px;
+				color: $black-color;
+				padding: 1.25rem 0;
+				border-bottom: 1px solid #e6efde;
+				text-transform: uppercase;
+				cursor: pointer;
+				& span {
+					color: #a4c58c;
+				}
+			}
+		}
+		& .tabs__content {
+			min-width: 31.25rem;
+			height: 43.125rem;
+			background: $green-pale url(../img/man.jpg) no-repeat center center / cover;
+			position: relative;
+			& .tab-item {
+				display: none;
+				color: $primary-color;
+				font-weight: 700;
+				font-size: 0.75rem;
+				width: 2.6875rem;
+				height: 2.6875rem;
+				border: 9px solid rgba(255,255,255, .8);
+				border-radius: 50%;
+				position: absolute;
+				text-align: center;
+				line-height: 25px;
+			}
+			& .tab-item:first-child {
+				display: block;
+			}
+			.item-1 {
+				left: 10rem;
+				top: 11.375rem;
+			}
+			.item-2 {
+				left: 18.75rem;
+				top: 12.5rem;
+			}
+			.item-3 {
+				left: 14.35rem;
+				top: 4.5rem;
+			}
+			.item-4 {
+				left: 14.35rem;
+				top: 8rem;
+			}
+			.item-5 {
+				left: 14.35rem;
+				top: 2rem;
+			}
+			.item-6 {
+				left: 12.35rem;
+				top: 22rem;
+			}
+			.item-7 {
+				left: 14.35rem;
+				top: 9rem;
+			}
+			.item-8 {
+				left: 14.35rem;
+				top: 12rem;
+			}
+			.item-9 {
+				left: 14.35rem;
+				top: 7rem;
+			}
+		}
 	}
 }
