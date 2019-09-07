@@ -486,12 +486,11 @@ header {
 }
 
 .popularity__wrapper {
-  background: red;
   max-width: 107.5rem;
   min-height: 40rem;
-  margin: 0 auto;
   background-image: url(../img/girlWithCup.jpg);
   background-repeat: no-repeat;
+  background-position: -53%;
 }
 
 .popularity__inner {
@@ -543,40 +542,40 @@ header {
   top: 1.8rem;
 }
 
-.popularity__right {
+.popularity__inner .popularity__right {
   max-width: 31.5rem;
   width: 100%;
   padding-right: 1rem;
   color: #303030;
 }
 
-.popularity__right-title {
+.popularity__inner .popularity__right-title {
   font-weight: 700;
   line-height: 45px;
   font-size: 2.5rem;
   margin-top: 2rem;
 }
 
-.popularity__right-subtitle {
+.popularity__inner .popularity__right-subtitle {
   padding: 50px 0;
   font-weight: 700;
   font-size: 0.875rem;
   text-transform: uppercase;
 }
 
-.popularity__right-list {
+.popularity__inner .popularity__right-list {
   list-style: none;
   padding-left: 0;
 }
 
-.popularity__right-list li {
+.popularity__inner .popularity__right-list li {
   position: relative;
   line-height: 1.375rem;
   margin-bottom: 2.8rem;
   padding-left: 2.5rem;
 }
 
-.popularity__right-list li:before {
+.popularity__inner .popularity__right-list li:before {
   content: "";
   position: absolute;
   top: 50%;
