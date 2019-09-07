@@ -1,6 +1,8 @@
 $primary-color: #fff;
 $gray-color: #9a9a9a;
+$light-gray: #f6f9f3;
 $green-pale: #c8dcba;
+$bg-button: #A4C58C;
 $black-color: #303030;
 $main-font: consolas, sans-serif;
 $montserat: 'Montserrat', sans-serif;
@@ -12,7 +14,7 @@ $montserat: 'Montserrat', sans-serif;
 body {
 	font-family: $montserat;
 	font-weight: 400;
-	// font-size: 62.5%;
+	line-height: 24px;
 }
 header {
 	color: 000;
@@ -23,6 +25,9 @@ header {
 	margin: 0 auto;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
+}
+.indent {
+	margin-bottom: 4.625rem;
 }
 .header__inner {
 	display: flex;
@@ -62,12 +67,11 @@ header {
 	padding-top: 3px;
 }
 .top {
-	margin-bottom: 4.625rem;
 	&__images {
 		max-width: 107.5rem;
 		margin: 0 auto;
 		min-height: 34rem ;
-		background: #fff url(../img/header-bg.jpg) no-repeat center center / cover;
+		background: $primary-color url(../img/header-bg.jpg) no-repeat center center / cover;
 	}
 	&__wrapper {
 		margin-top: -28.125rem;
@@ -89,12 +93,12 @@ header {
 			text-transform: uppercase;
 			margin-top: 5rem;
 			letter-spacing: 2px;
-			// margin-bottom: 1.56rem;
 		}
 		&-title {
 			font-size: 3.75rem;
 			font-weight: 600;
 			margin-bottom: 2.5rem;
+			margin-top: 1rem;
 		}
 		&-text {
 			margin-bottom: 5.625rem;
@@ -115,7 +119,7 @@ header {
 			&__title {
 				font-size: 0.875rem;
 				font-weight: 700;
-				color: #ffe7e7;
+				color: $black-color;
 				line-height: 22px;
 				letter-spacing: 1.5px;
 				margin-bottom: 2rem;
@@ -144,7 +148,7 @@ header {
 				right: -1px;
 				bottom: -1px;
 				color: $primary-color;
-				background-color: #7eb252;
+				background-color: $bg-button;
 				border: none;
 				outline: none;
 				padding: 22px 110px 22px 74px;
@@ -165,9 +169,6 @@ header {
 			}
 		}
 	}
-}
-.advantages {
-	margin-bottom: 4.625rem;
 }
 .advantages__inner {
 	display: flex;
@@ -221,27 +222,71 @@ header {
 			padding-right: 1.25rem;
 			width: 100%;
 			& .tab {
+				display: flex;
+				align-items: center;
 				font-weight: 600;
 				font-size: 0.875rem;
 				line-height: 20px;
 				color: $black-color;
-				padding: 1.25rem 0;
+				padding: 1.5rem 3rem 1.5rem 0;
 				border-bottom: 1px solid #e6efde;
 				text-transform: uppercase;
 				cursor: pointer;
 				& span {
 					color: #a4c58c;
+					margin-right: .5rem;
+				}
+				&.active {
+					position: relative;
+					&::after {
+						content: '';
+						position: absolute;
+						right: 10px;
+						width: 8px;
+						height: 13px;
+						background-image: url(../img/arrowSmall.png);
+					}
+				}
+			}
+			& .tabs-box {
+				display: flex;	
+				flex-wrap: wrap;
+				& .tab {
+					font-size: 1rem;
+					font-weight: 400;
+					width: 50%;
+					text-transform: none;
+					display: flex;
+					align-items: center;
+					&:first-child,
+					&:nth-child(3) {
+						border-right: 1px solid #e6efde;
+						padding-right: 1.5rem;
+					}
+					&:last-child,
+					&:nth-child(2) {
+						padding-left: 1.5rem;
+					}
+					& span {
+						font-size: 0.75rem;
+						margin-right: 1rem;
+					}
+					&.active::after {
+						display: none;
+					}
 				}
 			}
 		}
 		& .tabs__content {
-			min-width: 31.25rem;
+			min-width: 31.5rem;
 			height: 43.125rem;
 			background: $green-pale url(../img/man.jpg) no-repeat center center / cover;
 			position: relative;
+			margin-top: -9rem;
 			& .tab-item {
 				display: none;
 				color: $primary-color;
+				background-color: $green-pale;
 				font-weight: 700;
 				font-size: 0.75rem;
 				width: 2.6875rem;
@@ -289,7 +334,143 @@ header {
 			}
 			.item-9 {
 				left: 14.35rem;
-				top: 7rem;
+				top: 17rem;
+			}
+			& .tabs__reviews {
+				padding: 1.8rem;
+				background-color: $light-gray;
+				max-width: 26.875rem;
+				position: absolute;
+				bottom: 1.4rem;
+				&-inner {
+					border: 1px solid $green-pale;
+					padding: 1.5rem 2rem 1.5rem 2.5rem;
+					& .tabs__reviews-text {
+						color: #303030;
+					}
+					& .tabs__reviews-link {
+						color: #7eb252;
+						font-weight: 600;
+						padding: 0 0.5rem;
+						position: absolute;
+						bottom: 1.125rem;
+						background-color: #f6f9f3;
+					}
+				}
+			}
+		}
+	}
+	& .list__link {
+		display: flex;
+		justify-content: flex-end;
+		margin-top: 1.25rem;
+		& a {
+			color: $primary-color;
+			background-color: $bg-button;
+			outline: none;
+			padding: 22px 6.25rem 22px 7.5rem;
+			font-size: 0.875rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			text-decoration: none;
+			min-width: 31.5rem;
+			position: relative;
+			&:after {
+				content: '';
+				background-image: url(../img/arrow.png);
+				width: 30px;
+				height: 9px;
+				position: absolute;
+				right: 3.75rem;
+				top: 1.8rem;
+			}
+		}
+	}
+}
+.popularity {
+	&__wrapper {
+		background: red;
+		max-width: 107.5rem;
+		// 1720px
+		min-height: 40rem;
+		margin: 0 auto;
+		background-image: url(../img/girlWithCup.jpg);
+		background-repeat: no-repeat;
+	}
+	&__inner {
+		display: flex;
+		align-items: flex-end;
+		justify-content: flex-end;
+		& .popularity__box {
+			width: 50%;
+			background-color: $primary-color;
+			padding: 1.25rem;
+			margin-right: 2rem;
+			&-text {
+				border: 1px solid #c5dab5;
+				padding: 1.875rem;
+				color: $black-color;
+			}
+			&-link {
+				margin-top: 1.25rem;
+				color: $primary-color;
+				background-color: $bg-button;
+				outline: none;
+				padding: 22px 98.8px 22px 25px;
+				font-size: 0.875rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: .6px;
+				text-decoration: none;
+				position: absolute;
+				&:after {
+					content: '';
+					background-image: url(../img/arrow.png);
+					width: 30px;
+					height: 9px;
+					position: absolute;
+					right: 1.5rem;
+					top: 1.8rem;
+				}
+			}
+		}
+	}
+}
+.popularity__right {
+	max-width: 31.5rem;
+	width: 100%;
+	padding-right: 1rem;
+	color: $black-color;
+	&-title {
+		font-weight: 700;
+		line-height: 45px;
+		font-size: 2.5rem;
+		margin-top: 2rem;
+	}
+	&-subtitle {
+		padding: 50px 0;
+		font-weight: 700;
+		font-size: 0.875rem;
+		text-transform: uppercase;
+	}
+	&-list {
+		list-style: none;
+		padding-left: 0;
+		& li {
+			position: relative;
+			line-height: 1.375rem;
+			margin-bottom: 2.8rem;
+			padding-left: 2.5rem;
+			&:before {
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+				width: 8px;
+				height: 13px;
+				background-image: url(../img/arrowSmall.png);
 			}
 		}
 	}
