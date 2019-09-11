@@ -26,8 +26,34 @@ header {
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 }
+.container-fluid {
+	max-width: 107.5rem;	// 1720px
+	margin: 0 auto;
+}
 .indent {
 	margin-bottom: 4.625rem;
+}
+.form__btn {
+	position: relative;
+	padding: 22px 110px 22px 74px;
+	color: $primary-color;
+	background-color: $bg-button;
+	border: none;
+	outline: none;
+	font-size: 0.875rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+.form__btn:after {
+	content: '';
+	background-image: url(../img/arrow.png);
+	width: 30px;
+	height: 9px;
+	position: absolute;
+	right: 3.75rem;
+	top: 1.5rem;
 }
 .header__inner {
 	display: flex;
@@ -147,25 +173,6 @@ header {
 				position: absolute;
 				right: -1px;
 				bottom: -1px;
-				color: $primary-color;
-				background-color: $bg-button;
-				border: none;
-				outline: none;
-				padding: 22px 110px 22px 74px;
-				font-size: 0.875rem;
-				font-weight: 700;
-				text-transform: uppercase;
-				cursor: pointer;
-				letter-spacing: 1px;
-				&:after {
-					content: '';
-					background-image: url(../img/arrow.png);
-					width: 30px;
-					height: 9px;
-					position: absolute;
-					right: 3.75rem;
-					top: 1.5rem;
-				}
 			}
 		}
 	}
@@ -390,11 +397,10 @@ header {
 }
 .popularity {
 	&__wrapper {
-		max-width: 107.5rem;	// 1720px
 		min-height: 40rem;
 		background-image: url(../img/girlWithCup.jpg);
 		background-repeat: no-repeat;
-		background-position: -53%;
+		// background-position: -53%;
 	}
 	&__inner {
 		display: flex;
@@ -470,6 +476,69 @@ header {
 					}
 				}
 			}
+		}
+	}
+}
+.history {
+	padding-top: 10rem;
+	&__wrapper {
+		background-image: url(../img/doctor.jpg);
+		background-repeat: no-repeat;
+		background-position: right center;
+		min-height: 57.5rem;
+	}
+	&__title {
+		padding: 5.625rem 0 2.8125rem;
+		font-size: 2.5rem;
+		line-height: 50px;
+		font-weight: 700;
+		max-width: 35.625rem;
+	}
+	&__text {
+		background-color: #f6f9f3;
+		padding: 55px 30px 48px 0;
+		max-width: 43.75rem;
+		position: relative;
+		&:before {
+			content: "";
+			position: absolute;
+			height: 100%;
+			width: 17.18rem;
+			background-color: #f6f9f3;
+			right: 100%;
+			top: 0;
+		}
+		p {
+			margin: 15px 0;
+		}
+	}
+	&__form {
+		max-width: 400px;
+		padding-left: 30px;
+		margin-left: 200px;
+		&-title {
+			margin: 25px 0 15px;
+			font-size: 14px;
+			line-height: 22px;
+			font-weight: 700;
+			padding-right: 30px;
+			text-transform: uppercase;
+		}
+		input {
+			border: none;
+			outline:none;
+			height: 34px;
+			border-bottom: 1px solid #cddcbc;
+			display: block;
+			width: 100%;
+			font-size: 14px;
+			&::placeholder {
+				color: $bg-button;
+			}
+		}
+		button {
+			width: 100%;
+			margin-top: 2rem;
 		}
 	}
 }
