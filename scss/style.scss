@@ -29,6 +29,7 @@ header {
 .container-fluid {
 	max-width: 107.5rem;	// 1720px
 	margin: 0 auto;
+	overflow: hidden;
 }
 .indent {
 	margin-bottom: 4.625rem;
@@ -225,10 +226,27 @@ header {
 	&__inner {
 		display: flex;
 		justify-content: space-between;
-		& .tabs {
+		background-color: #f6f9f3;
+		position: relative;
+		&::before, 
+		&::after {
+			content: "";
+			position: absolute;
+			height: 100%;
+			top: 0;
+			width: 100%;
+			background-color: #f6f9f3;
+		}
+		&::before {
+			right: 100%;
+		}
+		&::after {
+			left: 100%;
+		}
+		.tabs {
 			padding-right: 1.25rem;
 			width: 100%;
-			& .tab {
+			.tab {
 				display: flex;
 				align-items: center;
 				font-weight: 600;
@@ -239,7 +257,7 @@ header {
 				border-bottom: 1px solid #e6efde;
 				text-transform: uppercase;
 				cursor: pointer;
-				& span {
+				span {
 					color: #a4c58c;
 					margin-right: .5rem;
 				}
@@ -503,7 +521,7 @@ header {
 			content: "";
 			position: absolute;
 			height: 100%;
-			width: 17.18rem;
+			width: 100%;
 			background-color: #f6f9f3;
 			right: 100%;
 			top: 0;
@@ -539,6 +557,30 @@ header {
 		button {
 			width: 100%;
 			margin-top: 2rem;
+		}
+	}
+}
+.quote {
+	padding-top: 4.625rem;
+	&__inner {
+		max-width: 51.36rem;
+		padding: 3.35rem 0;
+		border-top: 1px solid #a4c58c;
+		border-bottom: 1px solid #a4c58c;
+		text-align: center;
+		margin: 0 auto;
+		font-size: 1.6rem;
+		line-height: 40px;
+		font-weight: 700;
+		.author {
+			font-size: 1.2rem;
+			line-height: 30px;
+			font-weight: 400;
+			margin-top: 2.65rem;
+			span {
+				font-size: 1rem;
+				color: #9a9a9a;
+			}
 		}
 	}
 }

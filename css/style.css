@@ -26,6 +26,7 @@ header {
 .container-fluid {
   max-width: 107.5rem;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .indent {
@@ -281,6 +282,25 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background-color: #f6f9f3;
+  position: relative;
+}
+
+.list__inner::before, .list__inner::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 100%;
+  background-color: #f6f9f3;
+}
+
+.list__inner::before {
+  right: 100%;
+}
+
+.list__inner::after {
+  left: 100%;
 }
 
 .list__inner .tabs {
@@ -624,7 +644,7 @@ header {
   content: "";
   position: absolute;
   height: 100%;
-  width: 17.18rem;
+  width: 100%;
   background-color: #f6f9f3;
   right: 100%;
   top: 0;
@@ -678,5 +698,33 @@ header {
 .history__form button {
   width: 100%;
   margin-top: 2rem;
+}
+
+.quote {
+  padding-top: 4.625rem;
+}
+
+.quote__inner {
+  max-width: 51.36rem;
+  padding: 3.35rem 0;
+  border-top: 1px solid #a4c58c;
+  border-bottom: 1px solid #a4c58c;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+.quote__inner .author {
+  font-size: 1.2rem;
+  line-height: 30px;
+  font-weight: 400;
+  margin-top: 2.65rem;
+}
+
+.quote__inner .author span {
+  font-size: 1rem;
+  color: #9a9a9a;
 }
 /*# sourceMappingURL=style.css.map */
