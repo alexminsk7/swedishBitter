@@ -6,11 +6,16 @@ $bg-button: #A4C58C;
 $black-color: #303030;
 $main-font: consolas, sans-serif;
 $montserat: 'Montserrat', sans-serif;
-*,
-*::after,
-*::before {
+html {
 	box-sizing: border-box;
 }
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+/* такой способ подключения не сказывается 
+на производительности */
 body {
 	font-family: $montserat;
 	font-weight: 400;
@@ -135,7 +140,7 @@ header {
 		.top-form {
 			background-color: $primary-color;
 			padding: 1.25rem;
-			& form {
+			form {
 				border: 2px solid $green-pale;
 				border-radius: 1px;
 				position: relative;
@@ -153,7 +158,7 @@ header {
 				text-transform: uppercase;
 				width: 11.6rem;
 			}
-			& input {
+			input {
 				border: none;
 				padding-top: 0.875rem;
 				padding-bottom: 0.875rem;
@@ -170,7 +175,7 @@ header {
 					margin-left: 30px;
 				}
 			}
-			& button {
+			button {
 				position: absolute;
 				right: -1px;
 				bottom: -1px;
@@ -205,7 +210,7 @@ header {
 		line-height: 1.5rem;
 		border-bottom: 3px solid #a4c58c;
 		margin-bottom: 1.25rem;
-		& span {
+		span {
 			font-size: 1.875rem;
 		}
 	}
@@ -261,7 +266,7 @@ header {
 					color: #a4c58c;
 					margin-right: .5rem;
 				}
-				&.active {
+				.active {
 					position: relative;
 					&::after {
 						content: '';
@@ -273,10 +278,10 @@ header {
 					}
 				}
 			}
-			& .tabs-box {
+			.tabs-box {
 				display: flex;	
 				flex-wrap: wrap;
-				& .tab {
+				.tab {
 					font-size: 1rem;
 					font-weight: 400;
 					width: 50%;
@@ -292,7 +297,7 @@ header {
 					&:nth-child(2) {
 						padding-left: 1.5rem;
 					}
-					& span {
+					span {
 						font-size: 0.75rem;
 						margin-right: 1rem;
 					}
@@ -302,13 +307,13 @@ header {
 				}
 			}
 		}
-		& .tabs__content {
+		.tabs__content {
 			min-width: 31.5rem;
 			height: 43.125rem;
 			background: $green-pale url(../img/man.jpg) no-repeat center center / cover;
 			position: relative;
 			margin-top: -9rem;
-			& .tab-item {
+			.tab-item {
 				display: none;
 				color: $primary-color;
 				background-color: $green-pale;
@@ -322,7 +327,7 @@ header {
 				text-align: center;
 				line-height: 25px;
 			}
-			& .tab-item:first-child {
+			.tab-item:first-child {
 				display: block;
 			}
 			.item-1 {
@@ -361,7 +366,7 @@ header {
 				left: 14.35rem;
 				top: 17rem;
 			}
-			& .tabs__reviews {
+			.tabs__reviews {
 				padding: 1.8rem;
 				background-color: $light-gray;
 				max-width: 26.875rem;
@@ -370,10 +375,10 @@ header {
 				&-inner {
 					border: 1px solid $green-pale;
 					padding: 1.5rem 2rem 1.5rem 2.5rem;
-					& .tabs__reviews-text {
+					.tabs__reviews-text {
 						color: #303030;
 					}
-					& .tabs__reviews-link {
+					.tabs__reviews-link {
 						color: #7eb252;
 						font-weight: 600;
 						padding: 0 0.5rem;
@@ -385,15 +390,15 @@ header {
 			}
 		}
 	}
-	& .list__link {
+	.list__link {
 		display: flex;
 		justify-content: flex-end;
 		margin-top: 1.25rem;
-		& a {
+		a {
 			color: $primary-color;
 			background-color: $bg-button;
 			outline: none;
-			padding: 22px 6.25rem 22px 7.5rem;
+			padding: 1.46rem 6.25rem 1.46rem 7.5rem;
 			font-size: 0.875rem;
 			font-weight: 700;
 			text-transform: uppercase;
@@ -418,13 +423,12 @@ header {
 		min-height: 40rem;
 		background-image: url(../img/girlWithCup.jpg);
 		background-repeat: no-repeat;
-		// background-position: -53%;
 	}
 	&__inner {
 		display: flex;
 		align-items: flex-end;
 		justify-content: flex-end;
-		& .popularity__box {
+		.popularity__box {
 			width: 50%;
 			background-color: $primary-color;
 			padding: 1.25rem;
@@ -477,7 +481,7 @@ header {
 			&-list {
 				list-style: none;
 				padding-left: 0;
-				& li {
+				li {
 					position: relative;
 					line-height: 1.375rem;
 					margin-bottom: 2.8rem;
@@ -580,6 +584,205 @@ header {
 			span {
 				font-size: 1rem;
 				color: #9a9a9a;
+			}
+		}
+	}
+}
+.subjects__title {
+	padding: 6.67rem 0;
+	max-width: 35rem;
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 50px;
+}
+.subjects__wrapper {
+	background-color: #f6f9f3;
+	min-height: 25.68rem;
+	.subjects__inner {
+		position: relative;
+		top: -70px;
+		display: flex;
+		justify-content: space-around;
+		padding: 1.33rem;
+		background-color: #fff;
+		max-width: 67.33rem;
+		margin: 0 auto;
+		.subject {
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 20.8rem;
+			min-height: 20.8rem;
+			border: 1px solid #e4eddc;
+			&__number {
+				position: absolute;
+				font-size: 10rem;
+				font-weight: 900;
+				color: #f6f6f6;
+				line-height: 115px;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -70%);
+			}
+			&__content {
+				position: relative;
+				text-align: center;
+				&-img {
+					margin-bottom: 2rem;
+				}
+				&-title {
+					font-size: 0.93rem;
+					font-weight: 700;
+					padding: 0 10px 10px;
+					text-transform: uppercase;
+					line-height: 20px;
+				}
+			}
+		}
+	}
+}
+.composition {
+	padding-top: 12rem;
+	&__row {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		.composition__subject {
+			background-color: #FBFBFB;
+			margin-bottom: 1.5rem;
+			&-inner {
+				position: relative;
+				width: 17rem;
+				height: 17rem;
+				background-image: url(/img/1.png);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: auto;
+				.composition__subject-num, 
+				.composition__subject-name {
+					position: absolute;
+					transform: rotate(-90deg);
+					font-size: 0.93rem;
+					line-height: 24px;
+					letter-spacing: 3px;
+					color: #a4c58c;
+					font-weight: 700;
+				}
+				.composition__subject-num {
+					top: 27px;
+					left: -3px;
+					text-transform: uppercase;
+				}
+				.composition__subject-name {
+					font-weight: 400;
+					bottom: 13px;
+					right: 33px;
+					width: 0;
+					white-space: nowrap;
+					height: 0;
+				}
+				.composition__subject-effect {
+					opacity: 0;
+					position: absolute;
+					top: 20px;
+					right: 20px;
+					bottom: 20px;
+					left: 20px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background-image: url(/img/hover.png);
+					background-repeat: no-repeat;
+					background-position: center;
+					background-size: cover;
+					transition: all .3s;
+				}
+				.composition__subject-text {
+					color: #fff;
+					padding: 0.33rem;
+					font-size: 0.93rem;
+					font-weight: 700;
+					text-align: center;
+				}
+				&:hover .composition__subject-effect {
+					opacity: 1;
+					cursor: pointer;
+				}
+			}
+		}
+		.composition__box {
+			max-width: 35.35rem;
+			padding-left: 4rem;
+			padding-right: 5rem;
+			.composition__title {
+				font-size: 2.65rem;
+				font-weight: 700;
+				line-height: 50px;
+				margin-bottom: 2rem;
+				margin-top: -4rem;
+			}
+			&-list {
+				list-style: none;
+				li {
+					line-height: 22px;
+					padding-left: 1.46rem;
+					margin-bottom: 1.5rem;
+					position: relative;
+					&::before {
+						content: "";
+						position: absolute;
+						left: 0;
+						top: 6px;
+						width: 7px;
+						height: 7px;
+						border-radius: 50%;
+						background-color: #a4c58c;
+					}
+				}
+			}
+		}
+		.composition__order {
+			border: 1px solid #c8dcba;
+			padding: 3rem 4rem 2.3rem 3rem;
+			max-width: 52rem;
+			height: 100%;
+			position: relative;
+			&-text {
+				padding-left: 1.5rem;
+				position: relative;
+				&::before {
+					content: "";
+					position: absolute;
+					left: 0;
+					top: 6px;
+					width: 7px;
+					height: 7px;
+					border-radius: 50%;
+					background-color: #a4c58c;
+				}
+				.composition__order-btn {
+					position: absolute;
+					color: $primary-color;
+					background-color: $bg-button;
+					outline: none;
+					padding: 1.46rem 6.25rem 1.46rem 9.5rem;
+					font-size: 0.875rem;
+					font-weight: 700;
+					text-transform: uppercase;
+					letter-spacing: 1px;
+					text-decoration: none;
+					min-width: 31.5rem;
+					&::after {
+						content: '';
+						background-image: url(../img/arrow.png);
+						width: 30px;
+						height: 9px;
+						position: absolute;
+						right: 3.75rem;
+						top: 2rem;
+					}
+				}
 			}
 		}
 	}

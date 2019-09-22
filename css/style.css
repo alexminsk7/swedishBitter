@@ -1,10 +1,18 @@
-*,
-*::after,
-*::before {
+@charset "UTF-8";
+html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+/* такой способ подключения не сказывается 
+на производительности */
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
@@ -330,11 +338,11 @@ header {
   margin-right: .5rem;
 }
 
-.list__inner .tabs .tab.active {
+.list__inner .tabs .tab .active {
   position: relative;
 }
 
-.list__inner .tabs .tab.active::after {
+.list__inner .tabs .tab .active::after {
   content: '';
   position: absolute;
   right: 10px;
@@ -494,7 +502,7 @@ header {
   color: #fff;
   background-color: #A4C58C;
   outline: none;
-  padding: 22px 6.25rem 22px 7.5rem;
+  padding: 1.46rem 6.25rem 1.46rem 7.5rem;
   font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -726,5 +734,255 @@ header {
 .quote__inner .author span {
   font-size: 1rem;
   color: #9a9a9a;
+}
+
+.subjects__title {
+  padding: 6.67rem 0;
+  max-width: 35rem;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 50px;
+}
+
+.subjects__wrapper {
+  background-color: #f6f9f3;
+  min-height: 25.68rem;
+}
+
+.subjects__wrapper .subjects__inner {
+  position: relative;
+  top: -70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1.33rem;
+  background-color: #fff;
+  max-width: 67.33rem;
+  margin: 0 auto;
+}
+
+.subjects__wrapper .subjects__inner .subject {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 20.8rem;
+  min-height: 20.8rem;
+  border: 1px solid #e4eddc;
+}
+
+.subjects__wrapper .subjects__inner .subject__number {
+  position: absolute;
+  font-size: 10rem;
+  font-weight: 900;
+  color: #f6f6f6;
+  line-height: 115px;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -70%);
+          transform: translate(-50%, -70%);
+}
+
+.subjects__wrapper .subjects__inner .subject__content {
+  position: relative;
+  text-align: center;
+}
+
+.subjects__wrapper .subjects__inner .subject__content-img {
+  margin-bottom: 2rem;
+}
+
+.subjects__wrapper .subjects__inner .subject__content-title {
+  font-size: 0.93rem;
+  font-weight: 700;
+  padding: 0 10px 10px;
+  text-transform: uppercase;
+  line-height: 20px;
+}
+
+.composition {
+  padding-top: 12rem;
+}
+
+.composition__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.composition__row .composition__subject {
+  background-color: #FBFBFB;
+  margin-bottom: 1.5rem;
+}
+
+.composition__row .composition__subject-inner {
+  position: relative;
+  width: 17rem;
+  height: 17rem;
+  background-image: url(/img/1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.composition__row .composition__subject-inner .composition__subject-num,
+.composition__row .composition__subject-inner .composition__subject-name {
+  position: absolute;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  font-size: 0.93rem;
+  line-height: 24px;
+  letter-spacing: 3px;
+  color: #a4c58c;
+  font-weight: 700;
+}
+
+.composition__row .composition__subject-inner .composition__subject-num {
+  top: 27px;
+  left: -3px;
+  text-transform: uppercase;
+}
+
+.composition__row .composition__subject-inner .composition__subject-name {
+  font-weight: 400;
+  bottom: 13px;
+  right: 33px;
+  width: 0;
+  white-space: nowrap;
+  height: 0;
+}
+
+.composition__row .composition__subject-inner .composition__subject-effect {
+  opacity: 0;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-image: url(/img/hover.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.composition__row .composition__subject-inner .composition__subject-text {
+  color: #fff;
+  padding: 0.33rem;
+  font-size: 0.93rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.composition__row .composition__subject-inner:hover .composition__subject-effect {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.composition__row .composition__box {
+  max-width: 35.35rem;
+  padding-left: 4rem;
+  padding-right: 5rem;
+}
+
+.composition__row .composition__box .composition__title {
+  font-size: 2.65rem;
+  font-weight: 700;
+  line-height: 50px;
+  margin-bottom: 2rem;
+  margin-top: -4rem;
+}
+
+.composition__row .composition__box-list {
+  list-style: none;
+}
+
+.composition__row .composition__box-list li {
+  line-height: 22px;
+  padding-left: 1.46rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.composition__row .composition__box-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #a4c58c;
+}
+
+.composition__row .composition__order {
+  border: 1px solid #c8dcba;
+  padding: 3rem 4rem 2.3rem 3rem;
+  max-width: 52rem;
+  height: 100%;
+  position: relative;
+}
+
+.composition__row .composition__order-text {
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.composition__row .composition__order-text::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #a4c58c;
+}
+
+.composition__row .composition__order-text .composition__order-btn {
+  position: absolute;
+  color: #fff;
+  background-color: #A4C58C;
+  outline: none;
+  padding: 1.46rem 6.25rem 1.46rem 9.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  min-width: 31.5rem;
+}
+
+.composition__row .composition__order-text .composition__order-btn::after {
+  content: '';
+  background-image: url(../img/arrow.png);
+  width: 30px;
+  height: 9px;
+  position: absolute;
+  right: 3.75rem;
+  top: 2rem;
 }
 /*# sourceMappingURL=style.css.map */
